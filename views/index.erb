@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <style>
+      body {
+        <% if message == "Way too high!" %>
+          background: red;
+        <% elsif message == "Way too low!" %>
+          background: red;
+        <% elsif message == "Too high!"%>
+          background: #FF8080;
+        <% elsif message == "Too low!"%>
+          background: #FF8080;
+          <% else message == "You got it right! Great Job! A new number is ready to guess" %>
+          background: #85C285;
+        <%end%>
+      }
+    </style>
+  </head>
+    <body>
+    <% if number == params['guess'].to_i %>
+      <p>
+        The SECRET NUMBER is <%= number %>
+      </p>
+      <%end%>
+      <form>
+        <input type='text' name='guess' />
+        <input type='submit' value='Guess!'/>
+      </form>
+      <p> <%= message %>
+      </p>
+    </body>
+</html>
